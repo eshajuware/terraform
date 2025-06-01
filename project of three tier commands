@@ -1,0 +1,90 @@
+    1  clear
+    2  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+    3  wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+    4  clear
+    5  wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    6  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+    7  sudo apt update && sudo apt install terraform
+    8  aws configure
+    9  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   10  unzip awscliv2.zip
+   11  sudo ./aws/install
+   12  sudo apt install unzip
+   13  sudo ./aws/install
+   14  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   15  unzip awscliv2.zip
+   16  sudo ./aws/install
+   17  aws --version
+   18  aws configure
+   19  vi provider.tf
+   20  vi vpc.tf
+   21  vi igw.tf
+   22  vi subnets.tf
+   23  vi route_public.tf
+   24  history
+   25  vi route_public.tf
+   26  cat subnets.tf 
+   27  cat alb_sg.tf 
+   28  cat rds.tf 
+   29  vi output_alb.tf
+   30  vi variables.tf
+   31  history
+   32  apt update -y
+   33  sudo apt update -y
+   34  sudo apt install -y httpd
+   35  sudo apt install apache2
+   36  sudo apt install -y httpd
+   37  systemctl start apache2
+   38  sudo systemctl start apache2
+   39  sudo systemctl enable apache2
+   40  sudo systemctl status apache2
+   41  terraform init
+   42  cat alb_sg.tf 
+   43  vi alb_sg.tf 
+   44  terraform fmt  
+   45  vi alb_sg.tf 
+   46  terraform fmt  
+   47  terraform validate
+   48  terraform init
+   49  terraform validate 
+   50  vi subnets.tf
+   51  terraform validate 
+   52  nano ~/install-apache.sh
+   53  terraform validate
+   54  terraform plan
+   55  vi alb_sg.tf 
+   56  vi variables.tf 
+   57  terraform plan
+   58  terraform validate
+   59  vi alb_sg.tf 
+   60  terraform validate
+   61  terraform plan
+   62  terraform apply
+   63  vi auto-scaling-group.tf
+   64  vi rds.tf 
+   65  vi ec2.tf 
+   66  mkdir ~/terraform-project
+   67  mv ~/*.tf ~/terraform-project/
+   68  cd ~/terraform-project
+   69  ls
+   70  git init
+   71  cat <<EOF > .gitignore
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+.terraform.lock.hcl
+EOF
+
+   72  git add .
+   73  git commit -m "Initial commit of Terraform files"
+   74  git remote add origin https://github.com/eshajuware/Terraform-project.git
+   75  git branch -M main
+   76  git push -u origin main
+   77  git pull origin main --allow-unrelated-histories
+   78  git push -u origin main
+   79  git pull origin main --allow-unrelated-histories --no-rebase
+   80  git push -u origin main
+   81  history
+
